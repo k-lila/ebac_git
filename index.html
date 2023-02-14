@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <title>B > A</title>
+</head>
+<body>
+    <div class="container">
+        <p id="areaTexto">
+            Insira qualquer número nos espaços abaixo e aperte o botão, mas a validação somente ocorrerá se o número B for maior que o número A
+        </p>
+        <form>
+            <div class="numeros">
+                <input id="numA" type="number" step="any" placeholder="A" required>
+                <input id="numB" type="number" step="any" placeholder="B" required>
+            </div>
+            <button id="btnValidar" type="submit">validar</button>
+        </form>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

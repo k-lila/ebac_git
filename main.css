@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    display: grid;
+    width: fit-content;
+    border: 10px solid black;
+    border-radius: 10px;
+    margin: 25px;
+}
+
+.numeros {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 10px;
+}
+
+#numA,
+#numB {
+    font-size: 50px;
+    font-weight: 700;
+    width: 200px;
+    text-align: center;    
+    padding: 10px;
+    border: 10px solid black;
+    border-radius: 10px;
+}
+
+#btnValidar {    
+    font-size: 25px;
+    font-weight: bold;
+    display: grid;
+    padding: 10px;
+    border: 5px solid black;
+    border-radius: 5px;
+    background-color: white;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+#btnValidar:hover {
+    background-color: rgba(150, 150, 150, 0.5);
+}
+
+input:hover,
+input:focus {
+    background-color: rgba(150, 150, 150, 0.5);
+}
+
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
+#areaTexto {
+    font-size: 40px;    
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+}
