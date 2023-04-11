@@ -9,7 +9,7 @@ $(document).ready(function() {
         $('form input').val('')
     })
 
-    $('ul').on('dblclick', 'li', function() {
+    $('ul').on('click', 'li', function() {
         $(this).addClass('tarefa-feita');
     })
 })
