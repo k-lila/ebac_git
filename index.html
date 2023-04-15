@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <fieldset>
+        <legend><h1>Formulário</h1></legend>
+        <form>
+            <label for="nome">Nome completo</label>
+            <input type="text" name="nome" id="nome">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email">
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" id="telefone">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf">
+            <label for="endereco">Endereço completo</label>
+            <input type="text" name="endereco" id="endereco">
+            <label for="cep">CEP</label>
+            <input type="text" name="cep" id="cep">
+            <button type="submit">Enviar</button>
+        </form>
+    </fieldset>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/messages_pt_BR.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#telefone').mask('(00) 00000-0000', {
+                placeholder: '(xx) xxxxx-xxxx'
+            });
+            $('#cpf').mask('000000000-00', {
+                placeholder: 'xxxxxxxxx-xx'
+            });
+            $('#cep').mask('00000-000', {
+                placeholder: 'xxxxx-xxx'
+            });
+            $('form').validate({
+                rules: {
+                    nome: {required: true},
+                    email: {required: true, email: true},
+                    telefone: {required: true},
+                    cpf: {required: true},
+                    endereco: {required: true},
+                    cep: {required: true}
+                },
+                errorPlacement: function(error, element) {
+                    error.addClass('erro');
+                    error.insertAfter(element)
+                },
+                submitHandler: function(form) {
+                    $('fieldset').html("<p id='obrigado'>Obrigado!</p>");
+                    $('fieldset').addClass('obrigado');
+                    $('fieldset').click(function() {
+                        location.reload();
+                    })
+                }
+            });
+        });
+    </script>
+</body>
+</html>
