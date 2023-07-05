@@ -1,0 +1,80 @@
+@use './variaveis.scss' as var;
+
+// Mixins
+
+@mixin formatar() {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var.$fonte;
+    li {list-style: none;}
+};
+
+@mixin container($width: 100%) {
+    max-width: 1024px;
+    width: $width;
+    margin: 0 auto;
+};
+
+@mixin header() {
+    header {
+        background-color: var.$cor-2;
+        position: sticky;
+        top: 0;
+        left: 0;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+    }
+};
+
+@mixin menu() {
+    .menu {
+        display: flex;
+        li {
+            font-weight: bold;
+            margin-left: 24px;
+            a {
+                color: var.$cor-fonte;
+                text-decoration: none;
+            }
+        }
+    }
+};
+
+@mixin section($grid-pattern: repeat(3, 32.66%), $gap: 1%, $p-display: grid, $m-item: none) {
+    section {
+        padding: 56px 0;
+        .products {
+            margin-top: 40px;
+            display: $p-display;
+            grid-template-columns: $grid-pattern;
+            column-gap: $gap;
+            row-gap: 4%;
+            width: 100%;
+            .product-item {
+                margin-bottom: $m-item;
+            }
+            .product-item img {
+                width: 100%;
+                border-radius: 16px;
+            }
+            .product-button {
+                display: block;
+                background-color: var.$cor-3;
+                color: var.$cor-fonte;
+                text-align: center;
+                padding: 8px 0;
+                border-radius: 8px;
+                margin-top: 8px;
+                text-decoration: none;
+                &:hover {
+                    background-color: var.$cor-4;
+                }
+            }
+        }
+    }
+};
