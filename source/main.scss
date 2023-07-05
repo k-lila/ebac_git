@@ -18,11 +18,6 @@ body {
     @include mix.section();
 }
 
-@media screen and (max-width: var.$mobile) {
-    body {
-        @include mix.section($p-display: block, $m-item: 32px)
-    }
-}
 
 @media screen and (max-width: var.$tablet) {
     .container {
@@ -30,5 +25,11 @@ body {
     }
     body {
         @include mix.section($grid-pattern: repeat(2, 48.5%), $gap: 3%)
+    }
+}
+
+@media screen and (max-width: var.$mobile) {
+    body {
+        @include mix.section($p-display: block, $m-item: 32px)
     }
 }
